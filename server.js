@@ -5,20 +5,53 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article One |Alaguraja|',
-    heading: 'Article One',
-    date: 'Oct 2, 2016',
-    content: `
-        <p>
-            This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
-        </p>
-        <p>
-            This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
-        </p>
-        <p>
-            This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
-        </p>`
+var articles = {
+    'article-one' : {
+        title: 'Article One |Alaguraja|',
+        heading: 'Article One',
+        date: 'Oct 2, 2016',
+        content: `
+            <p>
+                This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
+            </p>
+            <p>
+                This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
+            </p>
+            <p>
+                This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
+            </p>`
+
+    },
+    'article-two' : {
+        title: 'Article Two |Alaguraja|',
+        heading: 'Article Two',
+        date: 'Oct 12, 2016',
+        content: `
+            <p>
+                This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. 
+            </p>
+            <p>
+                This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. 
+            </p>
+            <p>
+                This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. This is the content for my second article from css. 
+            </p>`
+    },
+    'article-three' : {
+        title: 'Article Three |Alaguraja|',
+        heading: 'Article Three',
+        date: 'Oct 16, 2016',
+        content: `
+            <p>
+                This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. 
+            </p>
+            <p>
+                This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. 
+            </p>
+            <p>
+                This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. This is the content for my third article from css. 
+            </p>`
+    }
 };
 
 function createTemplate(data){
@@ -62,16 +95,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
-});
-
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName', function (req, res) {
+  // articleName = article-one
+  //articles(articleName) = {} content object for article one
+  var articleName = req.params.articleName;
+  res.send(createTemplate(articles(articleName)));
 });
 
 app.get('/ui/style.css', function (req, res) {
