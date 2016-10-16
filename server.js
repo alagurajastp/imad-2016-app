@@ -11,13 +11,13 @@ var articleOne = {
     date: 'Oct 2, 2016',
     content: `
         <p>
-            This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. 
+            This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
         </p>
         <p>
-            This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. 
+            This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
         </p>
         <p>
-            This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. 
+            This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. This is the content for my first article from css. 
         </p>`
 };
 
