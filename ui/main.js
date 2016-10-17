@@ -8,11 +8,11 @@ element.innerText = 'New value to be displayed';
 var imgFile = document.getElementById('mainImg');
 var marginLeft = 0;
 function moveRight(){
-    marginLeft = marginLeft + 10;
+    marginLeft = marginLeft + 1;
     imgFile.style.marginLeft = marginLeft + 'px';
 }
 imgFile.onclick = function(){
-    var interval = setInterval(moveRight,100);
+    var interval = setInterval(moveRight,50);
     //imgFile.style.marginLeft = '100px';
     
 };
