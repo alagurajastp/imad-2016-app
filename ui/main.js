@@ -21,6 +21,7 @@ imgFile.onclick = function(){
 //Counter Code
 var button = document.getElementById('counter');
 var counter = 0;
+
 button.onclick = function(){
     
     //Make a request to the counter end point
@@ -30,5 +31,5 @@ button.onclick = function(){
     //Render the variable in a correct a span
     counter=counter + 1;
     var span = document.getElementById('count');
-    span.innertHTML = counter.toString();
+    span.innerHTML = counter.toString();
 };
